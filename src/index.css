@@ -8,12 +8,12 @@ html,body {
 }
 /* 添加任务 */
 .todoList {
-  width:360px;
+  width:620px;
   padding:20px;
   margin:0 auto;
 }
 .todoList input {
-  width:200px;
+  width:360px;
   height:30px;
   border:1px solid #ddd
 }
