@@ -16,9 +16,11 @@ function TodoList(props) {
   return (
     <ul>
       {
-        list.map((item) => <li key={item.id}><span onClick={() => handlerToggle(item.id)} className={item.done ? 'done' : ''}>{item.task}</span>
+        list.map((item) => <li key={item.id}>
+          <span onClick={() => handlerToggle(item.id)} className={item.done ? 'done' : ''}>{item.task}</span>
           {item.done ? <button className='btn-status ok'>&radic;</button> : null}
-          <button onClick={() => delTask(item.id)} className="btn-status del">&times;</button></li>)
+          <button onClick={() => delTask(item.id)} className="btn-status del">&times;</button>
+        </li>)
       }
 
     </ul>

@@ -49,7 +49,7 @@ display: none;
 .todoList .btn-status.del {
   background: #fd5000;
 }
-
+/* 完成显示 */
 .todoList .btn-status.ok {
   margin-right: 10px;
   display: inline-block;
