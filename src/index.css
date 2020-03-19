@@ -15,7 +15,9 @@ html,body {
 .todoList input {
   width:360px;
   height:30px;
-  border:1px solid #ddd
+  padding:0 10px;
+  border:1px solid #ddd;
+  outline: none;
 }
 /* 按钮 */
 .todoList .btn {
