@@ -1,11 +1,8 @@
 import React from 'react';
 
-// 连接store
-import { connect } from 'react-redux';
-import { addTodo } from '../../redux/actions';
 
 function AddTodo(props) {
-  const { dispatch } = props;
+  const { add } = props;
 
   // 获取元素对象
   let inputDom;
@@ -14,7 +11,7 @@ function AddTodo(props) {
     let task = inputDom.value.trim();
     // 处理空值
     if (!task) return;
-    dispatch(addTodo(task));
+    add(task);
     // 清空输入
     inputDom.value = ''
   }
@@ -26,5 +23,5 @@ function AddTodo(props) {
     </div>
   );
 }
-const mapStateToProps = (state) => ({})
-export default connect(mapStateToProps)(AddTodo);
+
+export default AddTodo;

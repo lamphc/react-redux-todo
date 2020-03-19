@@ -30,14 +30,13 @@ html,body {
   vertical-align: middle;
 }
 
-.todoList .btn-del {
+.todoList .btn-status {
   width: 16px;
   height: 16px;
   border-radius: 100%;
   line-height: 16px;
   font-size: 12px;
   text-align: center;
-  background: #fd5000;
   color: #fff;
   outline: none;
   border:none;
@@ -45,6 +44,16 @@ html,body {
   position: relative;
   bottom: 2px;
 display: none;
+}
+
+.todoList .btn-status.del {
+  background: #fd5000;
+}
+
+.todoList .btn-status.ok {
+  margin-right: 10px;
+  display: inline-block;
+  background: #38e205;
 }
 
 /* 任务列表 */
@@ -55,7 +64,7 @@ display: none;
   margin:20px 0;
 }
 
-.todoList li:hover .btn-del{
+.todoList li:hover .btn-status{
   display: inline-block;
 }
 

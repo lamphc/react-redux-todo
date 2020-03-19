@@ -1,16 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { toggleTodo, deleteTodo } from '../../redux/actions';
 
 function TodoList(props) {
-  const { list, dispatch } = props;
+  const { list, toggle, del } = props;
   // 切换任务状态
   const handlerToggle = (id) => {
-    dispatch(toggleTodo(id))
+    toggle(id)
   }
   // 删除任务
   const delTask = (id) => {
-    dispatch(deleteTodo(id))
+    del(id)
   }
   if (list.length === 0) {
     return <p>暂无任务</p>
@@ -19,7 +17,8 @@ function TodoList(props) {
     <ul>
       {
         list.map((item) => <li key={item.id}><span onClick={() => handlerToggle(item.id)} className={item.done ? 'done' : ''}>{item.task}</span>
-          <button onClick={() => delTask(item.id)} className="btn-del">x</button></li>)
+          {item.done ? <button className='btn-status ok'>&radic;</button> : null}
+          <button onClick={() => delTask(item.id)} className="btn-status del">&times;</button></li>)
       }
 
     </ul>
@@ -27,10 +26,4 @@ function TodoList(props) {
 }
 
 
-const mapStateToProps = (state, ownProps) => {
-  // console.log(state, ownProps);
-  return {
-    list: state
-  }
-}
-export default connect(mapStateToProps)(TodoList);
+export default TodoList;
